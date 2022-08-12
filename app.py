@@ -39,22 +39,22 @@ def predict():
         classes = model.predict(image_tensor)
         classes = np.argmax(classes, axis=1)
         print(classes)
-        if classes==2:
+        if classes==0:
           response = 'This is 50 naira note'
-        elif classes==0:
-          response = 'This is a 1000 naira note' 
-        elif classes==7:
-          response = 'This is a 500 naira note'
-        elif classes==4:
-          response = 'This is a 200 naira note'
-        elif classes == 5:
-          response = "This is a 5 naira note"
+        elif classes==1:
+          response = 'This is a 500 naira note' 
+        elif classes==2:
+          response = 'This is a 5 naira note'
         elif classes==3:
-          response = 'This is a 20 naira note'
+          response = 'This is a 100 naira note'
+        elif classes == 4:
+          response = "This is a 1000 naira note"
+        elif classes==3:
+          response = 'This is a 10 naira note'
         elif classes==6:
-          response response = 'This is a 100 Naira note'
+          response response = 'This is a 20 Naira note'
         else:
-          response = 'This ia a 10 Naira note'
+          response = 'This ia a 200 Naira note'
       return render_template("index.html", predictions=response, image=image)
     
     
