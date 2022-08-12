@@ -16,7 +16,7 @@ import tensorflow_hub as hub
 
 
 app = Flask(__name__, template_folder='Template')
-model = load_model('gen_model.h5',
+model = load_model('model1.h5',
                     custom_objects={'KerasLayer':hub.KerasLayer})
 
 @app.route('/', methods=['GET'])
